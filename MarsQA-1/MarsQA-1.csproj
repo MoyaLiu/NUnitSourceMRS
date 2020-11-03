@@ -160,6 +160,7 @@
     <Compile Include="NunitPages\Helpers\Driver.cs" />
     <Compile Include="NunitPages\Helpers\ExcelLibHelper.cs" />
     <Compile Include="NunitPages\Pages\HomePage\SignIn.cs" />
+    <Compile Include="NunitPages\Pages\SearchSkills.cs" />
     <Compile Include="NunitPages\Pages\ShareSkillPage.cs" />
     <Compile Include="NunitPages\Utils\Start.cs" />
     <Compile Include="NunitTests\ManageRequestTest\ManageSentRequestTest.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="NunitTests\HomePageTest\SignInTest.cs" />
     <Compile Include="NunitTests\HomePageTest\SignUpTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\SkillTabTest.cs" />
+    <Compile Include="NunitTests\SanityTest.cs" />
     <Compile Include="NunitTests\ShareSkillTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,11 +1,22 @@
 ﻿using MarsQA_1.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
 namespace MarsQA_1.Pages
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace MarsQA_1.NunitPages.Pages
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
 {
     public static class SearchSkills
     {
@@ -44,7 +55,11 @@ namespace MarsQA_1.Pages
         private static IWebElement LocationType => Driver.driver.FindElement(By.XPath("//*[@id='service-detail-section']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div/div[3]/div/div[3]/div/div[2]"));
 
         private static IWebElement ActivePage => Driver.driver.FindElement(By.XPath("//button[@class='ui active button currentPage']"));
+<<<<<<< HEAD
         private static IWebElement FirstSkillBox => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[1]/a/img"));
+=======
+
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
 
         #endregion
 
@@ -136,6 +151,10 @@ namespace MarsQA_1.Pages
                         }
                     }
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
             }
         }
 
@@ -144,13 +163,20 @@ namespace MarsQA_1.Pages
         public static void EnterUserName(int DataRow)
         {
             //Prepares the Excel Sheet
+<<<<<<< HEAD
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "Profile");
+=======
+            ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "SignUp");
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
 
             //Enter User name
             userTextBox.SendKeys(ExcelLibHelper.ReadData(DataRow, "FirstName") + " " + ExcelLibHelper.ReadData(DataRow, "LastName"));
             Thread.Sleep(3000);
             userTextBox.SendKeys(Keys.ArrowDown + Keys.Enter);
+<<<<<<< HEAD
             Thread.Sleep(2000);
+=======
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
         }
 
         //Function to Check Search Skills (TC-015-02)
@@ -242,6 +268,7 @@ namespace MarsQA_1.Pages
             Thread.Sleep(7000);
         }
 
+<<<<<<< HEAD
         public static void ClickOnOnFirstBox()
         {
             //Wait until finds Online Button
@@ -252,6 +279,8 @@ namespace MarsQA_1.Pages
             Thread.Sleep(2000);
         }
 
+=======
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
         //Function to check filter by online
         public static void CheckClickOnsite()
         {

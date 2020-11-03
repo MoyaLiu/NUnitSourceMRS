@@ -172,7 +172,11 @@
     <Compile Include="NunitTests\HomePageTest\SignInTest.cs" />
     <Compile Include="NunitTests\HomePageTest\SignUpTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\SkillTabTest.cs" />
+<<<<<<< HEAD
     <Compile Include="NunitTests\SanityTest.cs" />
+=======
+    <Compile Include="NunitTests\SearchSkillsTest.cs" />
+>>>>>>> 6d5c955942933128534d28024e161e485408b570
     <Compile Include="NunitTests\ShareSkillTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

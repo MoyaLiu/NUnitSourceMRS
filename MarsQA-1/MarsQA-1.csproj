@@ -146,8 +146,10 @@
   <ItemGroup>
     <Compile Include="NunitPages\Helpers\AutoIt.cs" />
     <Compile Include="NunitPages\Helpers\WaitHelper.cs" />
+    <Compile Include="NunitPages\Pages\CommonPage.cs" />
     <Compile Include="NunitPages\Pages\ManageListingPage.cs" />
     <Compile Include="NunitPages\Pages\ManageRequestPage.cs" />
+    <Compile Include="NunitPages\Pages\NotificationPage.cs" />
     <Compile Include="NunitPages\Pages\ProfilePage\ChangePassword.cs" />
     <Compile Include="NunitPages\Pages\ProfilePage\ProfilePage.cs" />
     <Compile Include="NunitPages\Pages\HomePage\SignUp.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="NunitPages\Utils\Start.cs" />
     <Compile Include="NunitTests\ManageRequestTest\ManageSentRequestTest.cs" />
     <Compile Include="NunitTests\ManageRequestTest\ManageReceivedRequestTest.cs" />
+    <Compile Include="NunitTests\NotificationTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\CertificatesTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\EducationTabTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\LanguageTabTest.cs" />
@@ -172,11 +175,8 @@
     <Compile Include="NunitTests\HomePageTest\SignInTest.cs" />
     <Compile Include="NunitTests\HomePageTest\SignUpTest.cs" />
     <Compile Include="NunitTests\ProfilePagesTest\SkillTabTest.cs" />
-<<<<<<< HEAD
     <Compile Include="NunitTests\SanityTest.cs" />
-=======
     <Compile Include="NunitTests\SearchSkillsTest.cs" />
->>>>>>> 6d5c955942933128534d28024e161e485408b570
     <Compile Include="NunitTests\ShareSkillTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

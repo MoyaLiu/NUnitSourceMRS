@@ -57,6 +57,17 @@ namespace MarsQA_1.Pages
             Thread.Sleep(500);
         }
 
+        public static void SentRequest()
+        {
+            //Check if there is a Request button and clicks it
+            WaitHelper.WaitClickble(Driver.driver, RequestButton);
+            RequestButton.Click();
+
+            //Clicks on the Accept Request alert and waits for 2 second for the page to load
+            RequestAcceptButton.Click();
+            Thread.Sleep(2000);
+        }
+
         public static void AcceptRequestWithOtherUser()
         {
             ProfilePages.LogOut();
@@ -189,7 +200,7 @@ namespace MarsQA_1.Pages
             //Refresh the page to update the listing
             Driver.driver.Navigate().Refresh();
             Thread.Sleep(5000);
-            WaitHelper.WaitClickble(Driver.driver, SentTitle);
+            WaitHelper.WaitClickble(Driver.driver, SentStatus);
 
             //Check if the newest request status matches the expected status
             if (SentStatus.Text == SpectedStatus)

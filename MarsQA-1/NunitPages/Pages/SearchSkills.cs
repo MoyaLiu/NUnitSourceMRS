@@ -1,65 +1,35 @@
 ﻿using MarsQA_1.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
-<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
 namespace MarsQA_1.Pages
-=======
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace MarsQA_1.NunitPages.Pages
->>>>>>> 6d5c955942933128534d28024e161e485408b570
 {
     public static class SearchSkills
     {
 
         #region Initailize Web Elements
         private static IWebElement SearchBox => Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/div[1]/div[1]/input"));
-
         private static IWebElement SearchIcon => Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/div[1]/div[1]/i"));
-
         private static IList<IWebElement> getRow => Driver.driver.FindElements(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div"));
-
         private static IList<IWebElement> getTitle => Driver.driver.FindElements(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div/div[1]/a[2]/p"));
-
         private static IList<IWebElement> getUsername => Driver.driver.FindElements(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div/div[1]/a[1]"));
-
         private static IList<IWebElement> Pagination => Driver.driver.FindElements(By.XPath("//button[@class='ui button otherPage']"));
-
         private static IList<IWebElement> AllCategory => Driver.driver.FindElements(By.XPath("//a[@class='item category']"));
-
         private static IList<IWebElement> Sub_Category => Driver.driver.FindElements(By.XPath("//a[@class='item subcategory']"));
-
         private static IWebElement userTextBox => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/input"));
-
         private static IWebElement userSearchIcon => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/i"));
-
         private static IWebElement onlineButton => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[1]/div[5]/button[1]"));
-
         private static IWebElement onsiteButton => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[1]/div[5]/button[2]"));
-
         private static IWebElement showAllButton => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[1]/div[5]/button[3]"));
-
         private static IWebElement Username => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[1]/div[1]/a[1]"));
-
         private static IWebElement RecordTitle => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[1]/div[1]/a[2]/p"));
-
         private static IWebElement LocationType => Driver.driver.FindElement(By.XPath("//*[@id='service-detail-section']/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div/div[3]/div/div[3]/div/div[2]"));
-
         private static IWebElement ActivePage => Driver.driver.FindElement(By.XPath("//button[@class='ui active button currentPage']"));
-<<<<<<< HEAD
         private static IWebElement FirstSkillBox => Driver.driver.FindElement(By.XPath("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[1]/a/img"));
-=======
-
->>>>>>> 6d5c955942933128534d28024e161e485408b570
 
         #endregion
 
@@ -151,10 +121,6 @@ namespace MarsQA_1.NunitPages.Pages
                         }
                     }
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d5c955942933128534d28024e161e485408b570
             }
         }
 
@@ -163,20 +129,14 @@ namespace MarsQA_1.NunitPages.Pages
         public static void EnterUserName(int DataRow)
         {
             //Prepares the Excel Sheet
-<<<<<<< HEAD
             ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "Profile");
-=======
-            ExcelLibHelper.PopulateInCollection(ConstantHelpers.ExcelPath, "SignUp");
->>>>>>> 6d5c955942933128534d28024e161e485408b570
 
             //Enter User name
             userTextBox.SendKeys(ExcelLibHelper.ReadData(DataRow, "FirstName") + " " + ExcelLibHelper.ReadData(DataRow, "LastName"));
             Thread.Sleep(3000);
             userTextBox.SendKeys(Keys.ArrowDown + Keys.Enter);
-<<<<<<< HEAD
             Thread.Sleep(2000);
-=======
->>>>>>> 6d5c955942933128534d28024e161e485408b570
+
         }
 
         //Function to Check Search Skills (TC-015-02)
@@ -268,7 +228,6 @@ namespace MarsQA_1.NunitPages.Pages
             Thread.Sleep(7000);
         }
 
-<<<<<<< HEAD
         public static void ClickOnOnFirstBox()
         {
             //Wait until finds Online Button
@@ -279,8 +238,6 @@ namespace MarsQA_1.NunitPages.Pages
             Thread.Sleep(2000);
         }
 
-=======
->>>>>>> 6d5c955942933128534d28024e161e485408b570
         //Function to check filter by online
         public static void CheckClickOnsite()
         {
@@ -288,8 +245,7 @@ namespace MarsQA_1.NunitPages.Pages
 
             if (LocationType.Text == "On-Site")
             {
-                Assert.Pass();
-                //  Assert.Pass("Test pass got " + LocationType.Text + " Page");
+                Assert.Pass("Test pass got " + LocationType.Text + " Page");
             }
 
         }

@@ -46,8 +46,32 @@ namespace MarsQA_1.Helpers
             Extent = new ExtentReports(ConstantHelpers.ReportsPath, true, DisplayOrder.NewestFirst);
             Extent.LoadConfig(ConstantHelpers.ReportXMLPath);
         }
+        #endregion
+        #region getcodedirectory
+        public static string GetCodeDirectory()
+        {
+            string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+            Console.WriteLine("BaseDirectory = " + BasePath);
+            return FormatFilePath(BasePath);
+        }
+
+        public static string FormatFilePath(string FilePath)
+        {
+            if (FilePath == null || FilePath.Length == 0)
+                return String.Empty;
+            string CodeDirectoryPath = "";
+            string slash = @"\";
+
+            for (int index = 0; index <= 2; index++)
+            {
+                CodeDirectoryPath = FilePath.Substring(0, FilePath.LastIndexOf(slash));
+                FilePath = CodeDirectoryPath;
+            }
+            Console.WriteLine("CodeDirectoryPath = " + CodeDirectoryPath);
+            return CodeDirectoryPath;
+        }
+        #endregion
     }
-    #endregion
 
 }
 

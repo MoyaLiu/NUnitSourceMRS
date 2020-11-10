@@ -19,7 +19,7 @@ namespace MarsQA_1.NunitTests
         public string DashBoardUrl = "http://localhost:5000/Account/Dashboard";
         NotificationPage notification = new NotificationPage();
         CommonPage commonPage = new CommonPage();
-        public int RowNumber = 2;//The second row in the SignIn tab of TestData.xls
+        public int RowNumber = 2;
 
         #region notification-menu
         [Test, Description("Check if user is able to click on 'Notification'")]
@@ -54,6 +54,7 @@ namespace MarsQA_1.NunitTests
             Assert.AreEqual(DashBoardUrl, Driver.driver.Url);
         }
         #endregion
+
         #region notification-dashboard
         [Test, Description("Check if user is able to click on 'Load more'")]
         public void TC_018_01_Click_Notification_LoadMore()
@@ -120,6 +121,103 @@ namespace MarsQA_1.NunitTests
 
             Assert.AreEqual("Notification updated", commonPage.getAlertDialogText());
         }
+        #endregion
+
+        #region notification-BRN
+
+        [Test]
+        [Category("TC_020_02")]
+        public void MarkSingleNotificationAsRead()
+        {
+
+            // Sign into Mars Portal
+            SignIn.OpenForm();
+
+            //Fill in credentials
+            SignIn.FillCredentials(7);
+
+            NotificationPage.ClickNotifications();
+            NotificationPage.SeeAllNotifications();
+
+            //Select a single notification
+            NotificationPage.SelectServiceRequest();
+
+            NotificationPage.MarkSelection();
+
+            //Assertion
+            NotificationPage.MarkAsReadAssertion();
+
+        }
+
+        [Test]
+        [Category("TC_020_03")]
+        public void MarkMultipleNotificationAsRead()
+        {
+            // Sign into Mars Portal
+            SignIn.OpenForm();
+
+            //Fill in credentials
+            SignIn.FillCredentials(7);
+
+            NotificationPage.ClickNotifications();
+            NotificationPage.SeeAllNotifications();
+
+            //Select Multiple notifications
+            NotificationPage.SelectMultipleServiceRequests();
+
+            NotificationPage.MarkSelection();
+
+            //Assertion
+            NotificationPage.MarkAsReadAssertion();
+
+        }
+
+        [Test]
+        [Category("TC_021_01")]
+        public void SelectAllNotifications()
+        {
+            // Sign into Mars Portal
+            SignIn.OpenForm();
+
+            //Fill in credentials
+            SignIn.FillCredentials(7);
+
+            NotificationPage.ClickNotifications();
+            NotificationPage.SeeAllNotifications();
+
+            //Click on select all notifications
+            NotificationPage.SelectAllServiceRequests();
+
+            //Assertion
+            NotificationPage.AllServiceRequestsSelectedAssertion();
+
+        }
+
+        [Test]
+        [Category("TC_021_03")]
+        public void UnselectAllNotifications()
+        {
+            // Sign into Mars Portal
+            SignIn.OpenForm();
+
+            //Fill in credentials
+            SignIn.FillCredentials(7);
+
+            NotificationPage.ClickNotifications();
+            NotificationPage.SeeAllNotifications();
+
+            //Click on select all notifications
+            NotificationPage.SelectAllServiceRequests();
+
+            //Click on unselect all notifications
+            NotificationPage.UnselectAllServiceRequests();
+
+            //Assertion
+            NotificationPage.UnselectAllAssertion();
+
+
+        }
+
         #endregion
     }
 }
